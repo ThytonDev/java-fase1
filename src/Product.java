@@ -1,7 +1,7 @@
 public class Product {
 
-    String name;
-    int stock;
+    private String name;
+    private int stock;
 
     //Getter, Setter Name
     public String getName() {
@@ -23,6 +23,15 @@ public class Product {
     public Product(String name, int stock) {
         this.name = name;
         this.stock = stock;
+    }
+
+    //Metodo vender
+    public void sell(int quantity) {
+        if (quantity > this.stock) {
+            throw new IllegalArgumentException("No tienes el suficiente stock para vender.");
+        } else {
+            this.stock = this.stock - quantity;
+        }
     }
 
 }
