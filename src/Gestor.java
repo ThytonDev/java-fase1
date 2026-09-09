@@ -6,7 +6,7 @@ public class Gestor {
         try {
             apple.sell(10);
             System.out.println("Venta realizada con exito.");
-        } catch (IllegalArgumentException e) {
+        } catch (InsufficientStockException e) {
             System.out.println("No se pudo vender: " + e.getMessage());
         } finally {
             System.out.println("Intento de venta finalizado (Finnaly)");
@@ -19,7 +19,7 @@ public class Gestor {
         try {
             apple.sell(3);
             System.out.println("La venta se realizo con exito");
-        } catch (IllegalArgumentException e) {
+        } catch (InsufficientStockException e) {
             System.out.println("No se pudo vender: " + e.getMessage());
         }
         System.out.println(apple.getStock());

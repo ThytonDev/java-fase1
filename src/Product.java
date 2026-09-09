@@ -28,7 +28,7 @@ public class Product {
     //Metodo vender
     public void sell(int quantity) {
         if (quantity > this.stock) {
-            throw new IllegalArgumentException("No tienes el suficiente stock para vender.");
+            throw new InsufficientStockException("No tienes el suficiente stock para vender.");
         } else {
             this.stock = this.stock - quantity;
         }
