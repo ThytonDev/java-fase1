@@ -20,4 +20,10 @@ public class Inventory {
         }
         return holder;
     }
+
+    //Creamos el metodo sellProduct("Nombre", cantidad a vender) primero lo buscamos y luego lo vendemos.
+    public void sellProduct(String name, int quantity) {
+        Product product = findByName(name); //puedo llamar directamente a findByName porque estoy dentro de inventory.
+        product.sell(quantity);
+    }
 }
