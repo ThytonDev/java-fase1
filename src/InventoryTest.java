@@ -53,10 +53,18 @@ public class InventoryTest {
             int opcion = sc.nextInt();
             sc.nextLine(); // sirve para poder capturar las siguientes lineas linea de limpieza
             //Creo el switch para los casos
-            switch (opcion) {
-                case 1 -> inventory.addProduct(new Product(sc.nextLine(), sc.nextInt()));
-                default -> System.out.println("Comando no encontrado.");
+            try {
+                switch (opcion) {
+                    case 1 -> inventory.addProduct(new Product(sc.nextLine(), sc.nextInt()));
+                    case 2 -> inventory.sellProduct(sc.nextLine(), sc.nextInt());
+                    case 3 -> inventory.showProducts();
+                    case 4 -> salir = true;
+                    default -> System.out.println("Comando no encontrado.");
+                }
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
             }
+
         }
     }
 }

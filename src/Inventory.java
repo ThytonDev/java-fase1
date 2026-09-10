@@ -26,4 +26,11 @@ public class Inventory {
         Product product = findByName(name); //puedo llamar directamente a findByName porque estoy dentro de inventory.
         product.sell(quantity);
     }
+
+    //Creamos metodo showProducts
+    public void showProducts() {
+        for (String s : products.keySet()){
+            System.out.println(products.get(s).getName() + " con stock de: " + products.get(s).getStock());
+        }
+    }
 }
