@@ -34,4 +34,9 @@ public class Product {
         }
     }
 
+    //Metodo describir
+    public void describe() {
+        System.out.println(this.getName() + " con un stock de: " + this.getStock());
+    }
+
 }

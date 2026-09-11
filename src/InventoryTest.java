@@ -55,8 +55,20 @@ public class InventoryTest {
             //Creo el switch para los casos
             try {
                 switch (opcion) {
-                    case 1 -> inventory.addProduct(new Product(sc.nextLine(), sc.nextInt()));
-                    case 2 -> inventory.sellProduct(sc.nextLine(), sc.nextInt());
+                    case 1 -> {
+                        System.out.println("Nombre del producto: ");
+                        String productName = sc.nextLine();
+                        System.out.println("Cantidad del producto: ");
+                        int productStock = sc.nextInt();
+                        inventory.addProduct(new Product(productName, productStock));
+                    }
+                    case 2 -> {
+                        System.out.println("Nombre del producto a vender: ");
+                        String productName = sc.nextLine();
+                        System.out.println("Cantidad del producto a vender: ");
+                        int productStock = sc.nextInt();
+                        inventory.sellProduct(productName, productStock);
+                    }
                     case 3 -> inventory.showProducts();
                     case 4 -> salir = true;
                     default -> System.out.println("Comando no encontrado.");

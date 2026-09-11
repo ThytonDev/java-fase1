@@ -30,7 +30,7 @@ public class Inventory {
     //Creamos metodo showProducts
     public void showProducts() {
         for (String s : products.keySet()){
-            System.out.println(products.get(s).getName() + " con stock de: " + products.get(s).getStock());
+            products.get(s).describe();
         }
     }
 }
